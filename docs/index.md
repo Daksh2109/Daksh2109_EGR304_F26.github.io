@@ -7,7 +7,7 @@ tags:
 <center>
 <font size= "6">Daksh Raghav Preetha Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name</font><br>
+<font size= "8"> Automatic Pet Feeder </font><br>
 for<br>
 <font size= "5"> Team 101 </font><br>
 
