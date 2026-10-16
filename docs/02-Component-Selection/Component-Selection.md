@@ -164,21 +164,71 @@ Therefore, the **AOTF2618L is our preferred MOSFET**, pending verification of it
 
 ---
 
+
+
 ## 4. DC Motor
 
-**Subsystem: Dispensing Mechanism**
+**Subsystem: Food Dispensing Mechanism**
 
-The motor will provide the mechanical motion required to move the dispensing mechanism and release pet food.
+The DC motor provides the mechanical motion required to operate the Automatic Pet Food Dispenser. The motor will rotate the dispensing mechanism to release food in controlled amounts.
+
+A 12V geared DC motor is preferred because it provides useful torque, a manageable rotational speed, and a larger mechanical structure suitable for moving the dispensing mechanism.
+
+The motor selection is based on operating voltage, speed, torque, physical size, current requirements, cost, and compatibility with the motor driver.
+
+### Component Comparison
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 1](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 2: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 2](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 3: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 3](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
+| **Option 1: DFRobot FIT0492-B 12V Metal Gearmotor** <br> **Manufacturer:** DFRobot <br> **Part Number:** FIT0492-B <br> **Operating Voltage:** 12V <br> **No-Load Speed:** 100 RPM <br> **Rated Torque:** 686.5 mN·m (approximately 7 kg·cm) <br> **Gear Ratio:** 100:1 <br> **Motor Diameter:** 37 mm <br> **Output Shaft:** 6 mm <br> **Price:** $11.90 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/dfrobot/FIT0492-B/7087168) <br> [Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/7153/FIT0492-B.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/358590ee-fbfc-4922-9748-174fbea285e8" /> | - 12V operation is compatible with our proposed power system. <br> - 100 RPM provides a reasonable speed for controlled dispensing. <br> - Metal gearbox provides increased output torque. <br> - Rated torque of approximately 7 kg·cm is suitable for consideration in a mechanical dispensing system. <br> - Larger 37 mm motor provides a more substantial mechanical design. <br> - 6 mm shaft allows connection to the dispensing mechanism. <br> - Lower price than many comparable geared motors. <br> - Available through DigiKey. | - Requires a separate motor driver capable of handling the motor current. <br> - Stall current must be verified before selecting the H-bridge. <br> - Larger motor requires more mounting space. <br> - Requires a suitable mounting bracket and shaft coupler. |
+| **Option 2: DFRobot FIT0492-A 12V Metal Gearmotor** <br> **Manufacturer:** DFRobot <br> **Part Number:** FIT0492-A <br> **Operating Voltage:** 12V <br> **No-Load Speed:** 50 RPM <br> **Rated Torque:** 883 mN·m (approximately 9 kg·cm) <br> **Motor Diameter:** 37 mm <br> **Price:** $11.90 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/dfrobot/FIT0492-A/7087165) <br> [Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2235/FIT0492-A_Web.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/bac56521-578c-44f5-b0ce-acb63e1e7f1e" /> | - Higher rated torque than the FIT0492-B. <br> - Slower rotation may improve dispensing control. <br> - Metal gearbox is suitable for mechanical actuation. <br> - Compatible with a 12V supply. <br> - Same listed price as the FIT0492-B. <br> - Available through DigiKey. | - Slower speed may increase dispensing time. <br> - Requires additional mechanical mounting space. <br> - Stall current must be checked before selecting the motor driver. <br> - Higher torque may not be necessary for our dispensing mechanism. |
+| **Option 3: Seeed Studio 114090046 DC Gearmotor** <br> **Manufacturer:** Seeed Technology <br> **Part Number:** 114090046 <br> **Operating Voltage:** 6V–12V <br> **Rated Torque:** 137.3 mN·m (approximately 1.4 kg·cm) <br> **Price:** $5.20 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/114090046/10385097) <br> [Datasheet](https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/694/114090046_Web.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/4421b90a-1931-4197-93d6-db294454ef89" /> | - Lowest price among the three options. <br> - Supports operation within a 6V–12V range. <br> - Suitable for lightweight mechanical movement. <br> - Can operate from the proposed 12V motor supply if permitted by the manufacturer's specifications. | - Much lower rated torque than the DFRobot motors. <br> - May not provide sufficient force to move the food dispensing mechanism. <br> - Speed is not specified in the referenced DigiKey listing. <br> - Less suitable for a larger dispensing mechanism. |
 
-**Final Selection:** [Selected Part Number]
+### Final Selection
 
-**Rationale:** [Compare motor torque, operating voltage, speed, current consumption, physical size, and ability to operate the food dispensing mechanism.]
+**Selected Component: Option 1 – DFRobot FIT0492-B 12V Metal Gearmotor**
+
+**Manufacturer:** DFRobot
+
+**Manufacturer Part Number:** FIT0492-B
+
+**DigiKey Part Number:** 1738-1271-ND
+
+**Motor Type:** Brushed DC Gearmotor
+
+**Operating Voltage:** 12V DC
+
+**No-Load Speed:** 100 RPM
+
+**Rated Torque:** 686.5 mN·m (approximately 7 kg·cm)
+
+**Gear Ratio:** 100:1
+
+**Motor Diameter:** 37 mm
+
+**Output Shaft:** 6 mm
+
+**Unit Price:** $11.90
+
+**Supplier:** DigiKey
+
+### Rationale
+
+The DFRobot FIT0492-B 12V Metal Gearmotor is selected for our Automatic Pet Food Dispenser because it provides a good balance of rotational speed, output torque, mechanical size, and cost.
+
+The motor operates at 12V and has a no-load speed of approximately 100 RPM. This speed makes it a reasonable candidate for rotating the dispensing mechanism at a controlled rate.
+
+The motor also provides a rated torque of approximately 7 kg·cm, making it a promising option for moving a mechanical dispensing system. The metal gearbox increases the available output torque while reducing rotational speed.
+
+Compared with the DFRobot FIT0492-A, the selected motor provides a higher rotational speed while maintaining substantial rated torque. This may allow food to be dispensed more quickly without requiring an excessively fast motor.
+
+Compared with the Seeed Studio 114090046, the FIT0492-B provides significantly greater rated torque, making it a more suitable candidate for a larger dispensing mechanism.
+
+Another advantage is the motor's price of approximately $11.90, which is lower than many comparable geared DC motors. It is also listed through DigiKey, allowing us to maintain consistency with our other component selections.
+
+The 37 mm motor diameter and 6 mm output shaft make it suitable for integration into the mechanical dispensing assembly.
+
+Therefore, the **DFRobot FIT0492-B is our preferred DC motor** because it provides a useful combination of speed, torque, mechanical strength, and affordability.
 
 ---
 
