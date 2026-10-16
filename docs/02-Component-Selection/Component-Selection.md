@@ -110,21 +110,57 @@ The sensor-conditioning circuit will be modified as necessary to accommodate the
 
 ---
 
-## 3. MOSFET
 
-**Subsystem: Motor Power Switching**
+## 3. MOSFET / Power Switching
 
-The MOSFET will be used for controlling power to the motor or other required load within the subsystem.
+**Subsystem: Motor Power Switching and Control**
+
+The MOSFET is responsible for electronically switching power to an electrical load within the Automatic Pet Food Dispenser. It must be compatible with the selected power supply, motor control circuitry, and PIC18F57Q43 Curiosity Nano microcontroller.
+
+The MOSFET selection is based on drain-source voltage, current capacity, gate-drive requirements, on-resistance, cost, ease of PCB integration, and compatibility with our existing circuit design.
+
+### Component Comparison
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 1](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 2: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 2](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 3: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 3](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
+| **Option 1: Alpha & Omega Semiconductor AOTF2618L** <br> **Manufacturer:** Alpha & Omega Semiconductor <br> **Drain-Source Voltage:** 60V <br> **Drain Current:** 7A (Ta), 22A (Tc) <br> **Package:** TO-220F <br> **Price:** Check current DigiKey unit price <br> [DigiKey Product](https://www.digikey.com/en/products/detail/alpha-omega-semiconductor-inc/AOTF2618L/785-1442-5-ND/3603382) <br> [Manufacturer Datasheet](https://www.aosmd.com/res/datasheets/AOTF2618L.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/b62ad8f1-6c7f-46a7-b0d7-7bf65eb742b4" /> | - 60V drain-source rating provides substantial headroom for a low-voltage switching circuit. <br> - Rated for 7A at ambient temperature and 22A at the specified case temperature. <br> - Through-hole package simplifies PCB assembly and soldering. <br> - Insulated TO-220F package is useful for mounting. <br> - Already used in our previous KiCad assignment, reducing redesign work. | - Larger package occupies more PCB space. <br> - Full current rating depends on thermal conditions. <br> - Direct operation from 3.3V microcontroller GPIO is not guaranteed. <br> - Gate-drive requirements must be checked before schematic implementation. |
+| **Option 2: Infineon IRLZ44NPBF** <br> **Manufacturer:** Infineon Technologies <br> **Drain-Source Voltage:** 55V <br> **Drain Current:** 47A (case-temperature rated) <br> **Package:** TO-220 <br> **Price:** Approximately $1.80 each; verify current price <br> [DigiKey Product](https://www.digikey.com/en/products/detail/infineon-technologies/IRLZ44NPBF/811808) <br> [Manufacturer Datasheet](https://www.infineon.com/assets/row/public/documents/24/49/infineon-irlz44n-datasheet-en.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/19316dfc-1c78-4f6a-8233-8d33da67ba4a" /> | - Logic-level N-channel MOSFET. <br> - Low on-resistance helps reduce power loss. <br> - High current rating provides electrical headroom. <br> - Through-hole package is easy to solder. <br> - Suitable for many low-voltage power-switching applications. | - Higher current capacity than our application may require. <br> - TO-220 package occupies significant PCB space. <br> - Gate-drive performance must still be checked at the actual control voltage. <br> - Would require changing the MOSFET used in our existing schematic. |
+| **Option 3: STMicroelectronics STP55NF06L** <br> **Manufacturer:** STMicroelectronics <br> **Drain-Source Voltage:** 60V <br> **Drain Current:** 55A (case-temperature rated) <br> **Package:** TO-220 <br> **Price:** Approximately $2.88 each; verify current price <br> [DigiKey Product](https://www.digikey.com/en/products/detail/stmicroelectronics/STP55NF06L/1039551) <br> [Manufacturer Datasheet](https://www.st.com/content/ccc/resource/technical/document/datasheet/49/c5/a8/71/93/60/4f/86/CD00002690.pdf/files/CD00002690.pdf/jcr:content/translations/en.CD00002690.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/90598517-4ed2-4955-98b8-0cb5dc47c106" /> | - 60V drain-source rating is suitable for low-voltage motor applications. <br> - High current capability. <br> - Designed for low-voltage gate-drive applications. <br> - Low on-resistance helps reduce heat generation. <br> - Through-hole package simplifies prototyping. | - Higher estimated price than the other alternatives. <br> - Large package requires more PCB space. <br> - High current rating is unnecessary for many small motors. <br> - Would require replacing our existing MOSFET selection. |
 
-**Final Selection:** [Selected Part Number]
+### Final Selection
 
-**Rationale:** [Explain your selection using gate-drive compatibility, drain-source voltage, continuous current rating, on-resistance, and thermal performance.]
+**Selected Component: Option 1 – Alpha & Omega Semiconductor AOTF2618L**
+
+**Manufacturer:** Alpha & Omega Semiconductor Inc.
+
+**Manufacturer Part Number:** AOTF2618L
+
+**DigiKey Part Number:** 785-1442-5-ND
+
+**MOSFET Type:** N-Channel
+
+**Drain-Source Voltage:** 60V
+
+**Continuous Drain Current:** 7A (Ta), 22A (Tc), under specified conditions
+
+**Package:** TO-220F (Through-Hole)
+
+**Supplier:** DigiKey
+
+
+### Rationale
+
+The Alpha & Omega Semiconductor AOTF2618L is selected as the preferred MOSFET for our Automatic Pet Food Dispenser because it offers appropriate voltage and current ratings for consideration in the subsystem's power-switching circuitry.
+
+The MOSFET has a maximum drain-source voltage of 60V and continuous drain-current ratings of 7A at ambient temperature and 22A at the specified case temperature. These ratings provide sufficient potential headroom for the low-voltage loads being considered, subject to verification of the actual current and thermal requirements.
+
+Its TO-220F through-hole package makes it easier to solder and incorporate into our PCB compared with smaller surface-mount components. The insulated package can also simplify certain mounting arrangements.
+
+Another major advantage is that the AOTF2618L was already used in our previous KiCad assignment. Reusing this component will reduce schematic modifications and allow us to build upon our existing design.
+
+Compared with the IRLZ44NPBF and STP55NF06L, the AOTF2618L provides the greatest compatibility with our existing KiCad work. Although the alternatives offer higher rated current capacities, these ratings may not provide a meaningful advantage for our relatively small dispensing mechanism.
+
+Therefore, the **AOTF2618L is our preferred MOSFET**, pending verification of its gate-drive voltage, switching losses, and compatibility with the selected motor and driver.
 
 ---
 
