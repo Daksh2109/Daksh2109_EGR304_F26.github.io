@@ -615,6 +615,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Op-Amp / Signal Conditioning Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1002,6 +1026,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Op-Amp / Signal Conditioning Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1160,8 +1208,10 @@
 <p>Compared with the other options, the TCST1103 offers similar sensing functionality at a lower unit price. Therefore, it is the preferred choice, provided the final mechanical design fits within its sensing gap.</p>
 <hr>
 <h2 id="2-op-amp-signal-conditioning-circuit">2. Op-Amp / Signal Conditioning Circuit</h2>
-<p><strong>Subsystem: Sensor Signal Processing</strong></p>
-<p>The op-amp circuit will condition the optical sensor output before it reaches the PIC18F57Q43 microcontroller.</p>
+<p><strong>Subsystem: Optical Sensor Signal Conditioning</strong></p>
+<p>The op-amp circuit processes the signal from the optical slot sensor before it reaches the PIC18F57Q43 Curiosity Nano microcontroller. The circuit is designed to operate from the regulated 5V supply provided by the LM7805 voltage regulator.</p>
+<p>The selected op-amp must support single-supply operation, provide sufficient input and output voltage range, consume minimal power, and be compatible with the existing KiCad schematic.</p>
+<h3 id="component-comparison_1">Component Comparison</h3>
 <table>
 <thead>
 <tr>
@@ -1172,24 +1222,39 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 1" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 1: Microchip MCP6004-I/P</strong> <br> <strong>Manufacturer:</strong> Microchip Technology <br> <strong>Supply Voltage:</strong> 1.8V–6.0V <br> <strong>Amplifiers:</strong> 4 <br> <strong>Bandwidth:</strong> 1 MHz <br> <strong>Package:</strong> 14-PDIP <br> <strong>Price:</strong> $0.60 each <br> <a href="https://www.digikey.com/en/products/result?keywords=MCP6004-I%2FP">DigiKey Product</a> <br> <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf">Manufacturer Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/45b579ef-60c2-48f7-a296-1ed65109689b" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/45b579ef-60c2-48f7-a296-1ed65109689b"></a></td>
+<td>- Compatible with our regulated 5V power supply. <br> - Rail-to-rail input and output operation. <br> - Four op-amps allow multiple signal-conditioning stages. <br> - Low power consumption. <br> - Through-hole package simplifies soldering and prototyping. <br> - Already used in our previous KiCad schematic.</td>
+<td>- Lower bandwidth than some alternative op-amps. <br> - Requires external resistors and capacitors for filtering. <br> - Not designed to replace a dedicated comparator for high-speed switching.</td>
 </tr>
 <tr>
-<td><strong>Option 2: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 2" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 2: Texas Instruments LM324N</strong> <br> <strong>Manufacturer:</strong> Texas Instruments <br> <strong>Supply Voltage:</strong> 3V–30V <br> <strong>Amplifiers:</strong> 4 <br> <strong>Bandwidth:</strong> Approximately 1.2 MHz <br> <strong>Package:</strong> 14-PDIP <br> <strong>Price:</strong> Check current DigiKey unit price <br> <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM324N/277627">DigiKey Product</a> <br> <a href="https://www.ti.com/lit/ds/symlink/lm224.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1792052005401">Manufacturer Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/e8016907-cbc0-4492-ac35-a2977d17f060" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/e8016907-cbc0-4492-ac35-a2977d17f060"></a></td>
+<td>- Supports 5V single-supply operation. <br> - Four op-amps in one IC. <br> - Through-hole package is easy to assemble. <br> - Widely used for basic analog signal conditioning. <br> - Can operate over a broad supply-voltage range.</td>
+<td>- Output cannot swing fully to the positive supply rail. <br> - Input common-mode range does not extend to the positive supply rail. <br> - Less suitable than a rail-to-rail amplifier for signals near 5V. <br> - Would require changing the op-amp selected in our existing schematic.</td>
 </tr>
 <tr>
-<td><strong>Option 3: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 3" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 3: Texas Instruments TLV9004IPWR</strong> <br> <strong>Manufacturer:</strong> Texas Instruments <br> <strong>Supply Voltage:</strong> 1.8V–5.5V <br> <strong>Amplifiers:</strong> 4 <br> <strong>Bandwidth:</strong> 1 MHz <br> <strong>Package:</strong> 14-TSSOP <br> <strong>Price:</strong> Check current DigiKey unit price <br> <a href="https://www.digikey.com/en/products/result?keywords=TLV9004IPWR">DigiKey Product</a> <br> <a href="https://www.ti.com/lit/ds/symlink/tlv9004.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1792113554109&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Ftlv9004">Manufacturer Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/81eaba8c-a17c-4ddb-9dfd-cbe8e715be81" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/81eaba8c-a17c-4ddb-9dfd-cbe8e715be81"></a></td>
+<td>- Compatible with regulated 5V operation. <br> - Rail-to-rail input and output. <br> - Four amplifiers provide flexibility for filtering. <br> - Low power consumption. <br> - Compact package saves PCB space.</td>
+<td>- Surface-mount package is harder to solder manually. <br> - Smaller pins require more careful PCB layout. <br> - Would require updating our existing KiCad schematic and footprint. <br> - Offers limited practical benefit over the MCP6004 for this application.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Final Selection:</strong> [Selected Part Number]</p>
-<p><strong>Rationale:</strong> [Compare operating voltage, input/output voltage range, accuracy, current consumption, and compatibility with the optical sensor.]</p>
+<h3 id="final-selection_1">Final Selection</h3>
+<p><strong>Selected Component: Option 1 – Microchip MCP6004-I/P</strong></p>
+<p><strong>Manufacturer:</strong> Microchip Technology</p>
+<p><strong>Part Number:</strong> MCP6004-I/P</p>
+<p><strong>Operating Voltage:</strong> 1.8V–6.0V</p>
+<p><strong>Planned Supply Voltage:</strong> 5V DC</p>
+<p><strong>Number of Amplifiers:</strong> 4</p>
+<p><strong>Package:</strong> 14-PDIP (Through-Hole)</p>
+<p><strong>Supplier:</strong> DigiKey</p>
+<p><strong>Rationale:</strong></p>
+<p>The Microchip MCP6004-I/P is selected for the Automatic Pet Food Dispenser because it provides the necessary signal-conditioning capabilities while remaining compatible with our existing electrical design.</p>
+<p>The MCP6004 supports single-supply operation from 1.8V to 6.0V, allowing it to operate from the regulated 5V output of our LM7805 voltage regulator. Its rail-to-rail input and output capability makes it suitable for processing sensor signals over a wide portion of the available supply-voltage range.</p>
+<p>The IC contains four independent operational amplifiers, allowing multiple signal-conditioning stages to be implemented without requiring additional amplifier ICs. Its 1 MHz bandwidth is sufficient for the relatively slow sensing signals expected from the pet food dispensing mechanism.</p>
+<p>Another major advantage is that the MCP6004 is already included in our previous KiCad schematic. Selecting this component allows us to reuse our existing circuit design and reduces the changes needed for the upcoming schematic and PCB assignments.</p>
+<p>Compared with the LM324N, the MCP6004 provides better rail-to-rail signal handling. Compared with the TLV9004, its through-hole package is easier to solder and integrate during prototyping.</p>
+<p>Therefore, the <strong>MCP6004-I/P is the preferred op-amp</strong> because it offers reliable 5V operation, low power consumption, sufficient performance, and the greatest compatibility with our existing design.</p>
+<p>The sensor-conditioning circuit will be modified as necessary to accommodate the selected optical slot sensor. The output voltage will also be checked against the PIC18F57Q43 Curiosity Nano's ADC input limits before the final schematic is completed.</p>
 <hr>
 <h2 id="3-mosfet">3. MOSFET</h2>
 <p><strong>Subsystem: Motor Power Switching</strong></p>
