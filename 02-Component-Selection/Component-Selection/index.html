@@ -582,6 +582,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Optical Slot Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -945,6 +969,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Optical Slot Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1071,7 +1119,8 @@
 <hr>
 <h2 id="1-optical-slot-sensor">1. Optical Slot Sensor</h2>
 <p><strong>Subsystem: Position and Rotation Detection</strong></p>
-<p>The optical slot sensor will be used to detect movement or rotation within the dispensing mechanism. Its output will be processed by the signal conditioning circuit before being sent to the microcontroller.</p>
+<p>The optical slot sensor will detect movement of the dispensing mechanism in our Automatic Pet Food Dispenser. A rotating slotted wheel or mechanical flag will interrupt the infrared beam, allowing the system to track movement. The sensor output will be sent through the op-amp/filter circuit before reaching the PIC18F57Q43 Curiosity Nano.</p>
+<h3 id="component-comparison">Component Comparison</h3>
 <table>
 <thead>
 <tr>
@@ -1082,24 +1131,33 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: [Part Number]</strong> <br> Manufacturer: [Name] <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 1" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2] <br> - [Advantage 3]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 1: Vishay TCST1103</strong> <br> <strong>Price:</strong> $1.48 each <br> <strong>Slot Width:</strong> 3.1 mm <br> <strong>Output:</strong> Phototransistor <br> <a href="https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/TCST1103/2354847">DigiKey Product</a> <br> <a href="https://www.vishay.com/en/product/83764/">Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/034b6955-2ddf-4b54-9eee-952b0faeca31" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/034b6955-2ddf-4b54-9eee-952b0faeca31"></a></td>
+<td>- Compatible with a 5V sensor circuit when properly biased. <br> - 3.1 mm slot provides room for a small encoder wheel or mechanical flag. <br> - Through-hole package is easier to solder during prototyping. <br> - Daylight-blocking filter helps reduce interference from ambient light. <br> - Lowest price among these three options.</td>
+<td>- Requires an external resistor for the infrared emitter. <br> - Phototransistor output requires a pull-up or signal-conditioning circuit. <br> - Sensor must be aligned with the moving mechanism.</td>
 </tr>
 <tr>
-<td><strong>Option 2: [Part Number]</strong> <br> Manufacturer: [Name] <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 2" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 2: Vishay TCST2103</strong> <br> <strong>Price:</strong> $1.84 each <br> <strong>Slot Width:</strong> 3.1 mm <br> <strong>Output:</strong> Phototransistor <br> <a href="https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/TCST2103/2354849">DigiKey Product</a> <br> <a href="https://www.vishay.com/docs/81147/tcst2103.pdf">Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/eff78c40-5eaf-49e6-8b9d-b795b3b5b661" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/eff78c40-5eaf-49e6-8b9d-b795b3b5b661"></a></td>
+<td>- Supports operation in a 5V sensing circuit with appropriate resistors. <br> - Through-hole mounting is suitable for student PCB assembly. <br> - 3.1 mm slot supports mechanical interruption sensing. <br> - Phototransistor output is suitable for detecting movement and rotation.</td>
+<td>- Larger physical package requires more mounting space. <br> - Higher price than the TCST1103. <br> - Requires additional circuitry to obtain a clean microcontroller input.</td>
 </tr>
 <tr>
-<td><strong>Option 3: [Part Number]</strong> <br> Manufacturer: [Name] <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 3" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 3: Aratas / Omron EE-SX1103</strong> <br> <strong>Price:</strong> $1.75 each <br> <strong>Slot Width:</strong> 2 mm <br> <strong>Output:</strong> Phototransistor <br> <a href="https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/EE-SX1103/355306">DigiKey Product</a> <br> <a href="https://omronfs.omron.com/en_US/ecb/products/pdf/en-ee_sx1103.pdf">Datasheet and Specifications</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/e6c08b4d-dd12-4694-a49f-ce9b461fd467" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/e6c08b4d-dd12-4694-a49f-ce9b461fd467"></a></td>
+<td>- Compact design can save PCB space. <br> - Fast response time of approximately 10 microseconds. <br> - Through-hole mounting simplifies soldering. <br> - Suitable for precise detection using a narrow mechanical flag.</td>
+<td>- Narrow 2 mm slot requires more accurate mechanical alignment. <br> - Less clearance for a thicker rotating disk. <br> - Requires external emitter and output circuitry.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Final Selection:</strong> [Selected Part Number]</p>
-<p><strong>Rationale:</strong> [Explain why this component is the best choice based on operating voltage, detection accuracy, mechanical compatibility, price, and ease of integration.]</p>
+<h3 id="final-selection">Final Selection</h3>
+<p><strong>Selected Component: Option 1 – Vishay TCST1103</strong></p>
+<p><strong>Manufacturer:</strong> Vishay Semiconductor</p>
+<p><strong>Part Number:</strong> TCST1103</p>
+<p><strong>Estimated Unit Cost:</strong> $1.48</p>
+<p><strong>Supplier:</strong> DigiKey</p>
+<p><strong>Rationale:</strong></p>
+<p>The Vishay TCST1103 is the preferred optical slot sensor for our Automatic Pet Food Dispenser because it provides a good balance of performance, mechanical compatibility, ease of implementation, and cost. Its 3.1 mm sensing gap provides sufficient clearance for a thin slotted wheel or mechanical flag, while its through-hole package makes it easier to install and solder on our PCB.</p>
+<p>The sensor uses an infrared emitter and phototransistor, making it suitable for detecting interruptions caused by movement of the dispensing mechanism. Its daylight-blocking filter also helps reduce interference from surrounding light.</p>
+<p>Although the sensor requires external resistors and signal conditioning, our subsystem already includes an op-amp/filter circuit. This allows us to process the sensor output before sending it to the PIC18F57Q43 microcontroller.</p>
+<p>Compared with the other options, the TCST1103 offers similar sensing functionality at a lower unit price. Therefore, it is the preferred choice, provided the final mechanical design fits within its sensing gap.</p>
 <hr>
 <h2 id="2-op-amp-signal-conditioning-circuit">2. Op-Amp / Signal Conditioning Circuit</h2>
 <p><strong>Subsystem: Sensor Signal Processing</strong></p>
