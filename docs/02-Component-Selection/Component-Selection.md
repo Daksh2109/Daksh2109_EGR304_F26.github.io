@@ -1,8 +1,6 @@
 ---
-title: Component Selection Example
+title: Component Selection 
 ---
-
-## Examples
 
 
 
@@ -247,9 +245,9 @@ The selection criteria include operating voltage, output current, protection fea
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: Fairchild FAN8100N** <br> **Manufacturer:** Fairchild Semiconductor <br> **Part Number:** FAN8100N <br> **Motor Supply:** 1.8V–9V <br> **Peak Current:** 1.5A per channel <br> **Package:** 12-DIP <br> **Price:** Verify current availability <br> [DigiKey Product](https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200) <br> [Datasheet](https://rocelec.widen.net/view/pdf/1pizbjqffm/FAIRS23777-1.pdf?t.download=true&u=5oefqw) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/45896ea9-9cc2-474c-bbe5-754e1306a7a2" /> | - Already used in our previous KiCad schematic. <br> - Through-hole package is easy to solder. <br> - Integrated motor driver reduces external circuitry. <br> - Supports low-voltage control applications. | - Maximum recommended motor supply is only 9V. <br> - Cannot safely operate our selected 12V motor at its rated voltage. <br> - Limited output current compared with newer drivers. <br> - Obsolete component is less suitable for a new design. |
-| **Option 2: Texas Instruments DRV8876PWPR** <br> **Manufacturer:** Texas Instruments <br> **Part Number:** DRV8876PWPR <br> **Motor Supply:** 4.5V–37V <br> **Peak Output Current:** 3.5A <br> **Package:** 16-HTSSOP <br> **Price:** Verify current DigiKey unit price <br> [DigiKey Product](https://www.digikey.com/en/products/result?keywords=DRV8876PWPR) <br> [Datasheet](https://www.ti.com/lit/ds/symlink/drv8876.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1792210278640&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8876) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/76256b1a-f6ff-438d-bd7c-86005146f44b" /> | - Supports 12V motor operation. <br> - Compatible with 3.3V and 5V logic inputs. <br> - Integrated current sensing and regulation. <br> - Includes overcurrent and thermal protection. <br> - Supports PWM speed control and bidirectional motor operation. | - Lower peak current than the DRV8874. <br> - May be unsuitable if the selected motor has a high stall current. <br> - Surface-mount package is harder to solder manually. <br> - Requires PCB layout and thermal design considerations. |
-| **Option 3: Texas Instruments DRV8874PWPR** <br> **Manufacturer:** Texas Instruments <br> **Part Number:** DRV8874PWPR <br> **Motor Supply:** 4.5V–37V <br> **Peak Output Current:** 6A <br> **Package:** 16-HTSSOP <br> **Price:** Verify current DigiKey unit price <br> [DigiKey Product](https://www.digikey.com/en/products/result?keywords=DRV8874PWPR) <br> [Manufacturer Datasheet](https://www.ti.com/lit/ds/symlink/drv8874.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1792210378050&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8874) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/da58d501-2be9-4a43-bfd7-b6bcd0901c54" /> | - Supports our selected 12V motor supply. <br> - Higher 6A peak current capability than the DRV8876. <br> - Compatible with 3.3V and 5V microcontroller logic. <br> - Integrated current sensing and current regulation. <br> - Includes overcurrent, undervoltage, and thermal protection. <br> - Supports PWM speed control and motor direction control. <br> - Integrated H-bridge reduces the need for external switching MOSFETs. | - Surface-mount package requires careful soldering. <br> - Thermal pad requires appropriate PCB copper and vias. <br> - More complicated PCB layout than a through-hole driver. <br> - 6A is a peak rating, not a guaranteed continuous current capability. <br> - Motor stall current must still be verified. |
+| **Option 1: Fairchild FAN8100N** <br> **Manufacturer:** Fairchild Semiconductor <br> **Part Number:** FAN8100N <br> **Motor Supply:** 1.8V–9V <br> **Peak Current:** 1.5A per channel <br> **Package:** 12-DIP <br>  [DigiKey Product](https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200) <br> [Datasheet](https://rocelec.widen.net/view/pdf/1pizbjqffm/FAIRS23777-1.pdf?t.download=true&u=5oefqw) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/45896ea9-9cc2-474c-bbe5-754e1306a7a2" /> | - Already used in our previous KiCad schematic. <br> - Through-hole package is easy to solder. <br> - Integrated motor driver reduces external circuitry. <br> - Supports low-voltage control applications. | - Maximum recommended motor supply is only 9V. <br> - Cannot safely operate our selected 12V motor at its rated voltage. <br> - Limited output current compared with newer drivers. <br> - Obsolete component is less suitable for a new design. |
+| **Option 2: Texas Instruments DRV8876PWPR** <br> **Manufacturer:** Texas Instruments <br> **Part Number:** DRV8876PWPR <br> **Motor Supply:** 4.5V–37V <br> **Peak Output Current:** 3.5A <br> **Package:** 16-HTSSOP <br> **Price:** $2.07 each <br> [DigiKey Product](https://www.digikey.com/en/products/result?keywords=DRV8876PWPR) <br> [Datasheet](https://www.ti.com/lit/ds/symlink/drv8876.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1792210278640&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8876) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/76256b1a-f6ff-438d-bd7c-86005146f44b" /> | - Supports 12V motor operation. <br> - Compatible with 3.3V and 5V logic inputs. <br> - Integrated current sensing and regulation. <br> - Includes overcurrent and thermal protection. <br> - Supports PWM speed control and bidirectional motor operation. | - Lower peak current than the DRV8874. <br> - May be unsuitable if the selected motor has a high stall current. <br> - Surface-mount package is harder to solder manually. <br> - Requires PCB layout and thermal design considerations. |
+| **Option 3: Texas Instruments DRV8874PWPR** <br> **Manufacturer:** Texas Instruments <br> **Part Number:** DRV8874PWPR <br> **Motor Supply:** 4.5V–37V <br> **Peak Output Current:** 6A <br> **Package:** 16-HTSSOP <br>  [DigiKey Product](https://www.digikey.com/en/products/result?keywords=DRV8874PWPR) <br> [Manufacturer Datasheet](https://www.ti.com/lit/ds/symlink/drv8874.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1792210378050&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8874) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/da58d501-2be9-4a43-bfd7-b6bcd0901c54" /> | - Supports our selected 12V motor supply. <br> - Higher 6A peak current capability than the DRV8876. <br> - Compatible with 3.3V and 5V microcontroller logic. <br> - Integrated current sensing and current regulation. <br> - Includes overcurrent, undervoltage, and thermal protection. <br> - Supports PWM speed control and motor direction control. <br> - Integrated H-bridge reduces the need for external switching MOSFETs. | - Surface-mount package requires careful soldering. <br> - Thermal pad requires appropriate PCB copper and vias. <br> - More complicated PCB layout than a through-hole driver. <br> - 6A is a peak rating, not a guaranteed continuous current capability. <br> - Motor stall current must still be verified. |
 
 ### Final Selection
 
@@ -297,21 +295,64 @@ Therefore, the **DRV8874PWPR is our preferred H-bridge motor driver**, pending v
 
 ---
 
+
 ## 6. Linear Voltage Regulator
 
-**Subsystem: Power Regulation**
+**Subsystem: 5V Power Regulation**
 
-A linear voltage regulator will provide a stable 5V supply for compatible components within the subsystem. The motor will use a separate power source where required.
+The linear voltage regulator will convert the main DC power supply voltage into a stable 5V output for compatible electronic components in the Automatic Pet Food Dispenser.
+
+Our existing KiCad schematic already includes an LM7805 voltage regulator, barrel jack, and filtering capacitors. Reusing this design will reduce the changes required for our upcoming schematic assignment.
+
+The final power system is planned to use a 12V DC input. The motor will operate from the 12V supply through the H-bridge driver, while the linear regulator will provide 5V for compatible low-power control circuitry.
+
+### Component Comparison
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 1](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 2: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 2](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 3: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 3](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
+| **Option 1: Texas Instruments LM7805CT/NOPB** <br> **Manufacturer:** Texas Instruments <br> **Part Number:** LM7805CT/NOPB <br> **DigiKey Part Number:** 296-47192-ND <br> **Output Voltage:** 5V <br> **Maximum Input Voltage:** 35V <br> **Rated Output Current:** 1.5A <br> **Package:** TO-220-3 <br> **Price:** $1.86 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT-NOPB/3901929) <br> [Datasheet](https://www.ti.com/lit/ds/symlink/lm7800.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/a0fd38ea-062e-497a-b857-61c144023200" /> | - Produces a regulated 5V output. <br> - Compatible with a 12V input supply. <br> - Supports up to 1.5A under appropriate thermal conditions. <br> - Includes overcurrent and thermal protection. <br> - Through-hole package simplifies assembly. <br> - Matches the LM7805 regulator family already used in our KiCad schematic. | - Generates heat because excess voltage is dissipated as power. <br> - May require a heatsink at higher output currents. <br> - Less efficient than a switching regulator. <br> - Listed as temporarily out of stock at DigiKey during research. |
+| **Option 2: STMicroelectronics L7805CV** <br> **Manufacturer:** STMicroelectronics <br> **Part Number:** L7805CV <br> **DigiKey Part Number:** 497-1443-5-ND <br> **Output Voltage:** 5V <br> **Maximum Input Voltage:** 35V <br> **Rated Output Current:** 1.5A <br> **Package:** TO-220 <br> **Price:** $1.08 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964) <br> [Datasheet](https://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/de6a5caa-0d68-4a10-94dd-355ba2832c44" /> | - Regulated 5V output. <br> - Compatible with a 12V input. <br> - Rated for up to 1.5A with adequate cooling. <br> - Through-hole package is easy to solder. <br> - Lower price than the Texas Instruments option. <br> - Widely available through DigiKey. | - Generates heat during voltage conversion. <br> - May require a heatsink. <br> - Requires checking capacitor values and pin configuration before substituting. <br> - Would require updating the manufacturer part number in our schematic. |
+| **Option 3: onsemi MC7805CTG** <br> **Manufacturer:** onsemi <br> **Part Number:** MC7805CTG <br> **DigiKey Part Number:** MC7805CTGOS-ND <br> **Output Voltage:** 5V <br> **Maximum Input Voltage:** 35V <br> **Rated Output Current:** 1A <br> **Package:** TO-220 <br> **Price:** $1.01 <br> [DigiKey Product](https://www.digikey.com/en/products/detail/onsemi/MC7805CTG/919333) <br> [Datasheet](https://www.onsemi.com/pdf/datasheet/mc7800-d.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/765bbd75-7e87-4f8e-a53e-491bd16cc4d5" /> | - Produces a stable 5V output. <br> - Supports 12V input operation. <br> - Through-hole package simplifies PCB assembly. <br> - Lower cost than the other candidates. <br> - Available through DigiKey. | - Lower rated output current than the other options. <br> - Generates heat when converting 12V to 5V. <br> - Requires checking the footprint and pinout before substitution. <br> - May require additional cooling depending on current consumption. |
 
-**Final Selection:** [Selected Part Number]
+### Final Selection
 
-**Rationale:** [Compare input voltage range, output current capability, dropout voltage, heat dissipation, package, and cost.]
+**Selected Component: Option 1 – Texas Instruments LM7805CT/NOPB**
+
+**Manufacturer:** Texas Instruments
+
+**Manufacturer Part Number:** LM7805CT/NOPB
+
+**DigiKey Part Number:** 296-47192-ND
+
+**Regulator Type:** Positive Linear Voltage Regulator
+
+**Input Voltage:** Up to 35V
+
+**Planned Input Voltage:** 12V DC
+
+**Output Voltage:** 5V DC
+
+**Rated Output Current:** 1.5A (subject to thermal limitations)
+
+**Package:** TO-220-3 (Through-Hole)
+
+**Unit Price:** $1.86
+
+**Supplier:** DigiKey
+
+### Rationale
+
+The Texas Instruments LM7805CT/NOPB is selected for our Automatic Pet Food Dispenser because it provides a regulated 5V output and is compatible with the LM7805 regulator circuit already created in our previous KiCad assignment.
+
+The regulator supports input voltages up to 35V, allowing it to operate from our proposed 12V DC supply. Its fixed 5V output is suitable for powering compatible sensor and signal-conditioning circuits, including our selected MCP6004 op-amp.
+
+The LM7805CT/NOPB has a rated output current of 1.5A under appropriate thermal conditions. This provides potential current capacity for our low-power electronics, although the actual usable current will depend on heat dissipation and the final power budget.
+
+Compared with the STMicroelectronics L7805CV and onsemi MC7805CTG, the Texas Instruments regulator offers similar basic voltage regulation capabilities. The main reason for selecting it is compatibility with our existing LM7805-based schematic and its established electrical specifications.
+
+The TO-220 through-hole package is also convenient for PCB assembly and allows a heatsink to be added if necessary.
+
+Therefore, the **Texas Instruments LM7805CT/NOPB is our preferred linear voltage regulator**, allowing us to reuse much of our existing power regulation circuit.
 
 ---
 
