@@ -732,6 +732,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5. H-Bridge Motor Driver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1209,6 +1242,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5. H-Bridge Motor Driver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-comparison_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-selection_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1494,8 +1560,11 @@
 <p>Therefore, the <strong>DFRobot FIT0492-B is our preferred DC motor</strong> because it provides a useful combination of speed, torque, mechanical strength, and affordability.</p>
 <hr>
 <h2 id="5-h-bridge-motor-driver">5. H-Bridge Motor Driver</h2>
-<p><strong>Subsystem: Motor Control</strong></p>
-<p>The H-bridge motor driver will allow the microcontroller to control the motor's direction and operation.</p>
+<p><strong>Subsystem: DC Motor Direction and Speed Control</strong></p>
+<p>The H-bridge motor driver will control the direction and speed of the DC motor used in our Automatic Pet Food Dispenser. The driver will receive control signals from the PIC18F57Q43 Curiosity Nano and deliver power to the motor.</p>
+<p>Our selected motor is the DFRobot FIT0492-B 12V metal gearmotor. Therefore, the H-bridge must support a 12V motor supply, provide sufficient output current, and operate with the microcontroller's control signals.</p>
+<p>The selection criteria include operating voltage, output current, protection features, ease of PCB integration, component availability, and compatibility with our existing schematic.</p>
+<h3 id="component-comparison_4">Component Comparison</h3>
 <table>
 <thead>
 <tr>
@@ -1506,24 +1575,44 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 1" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 1: Fairchild FAN8100N</strong> <br> <strong>Manufacturer:</strong> Fairchild Semiconductor <br> <strong>Part Number:</strong> FAN8100N <br> <strong>Motor Supply:</strong> 1.8V–9V <br> <strong>Peak Current:</strong> 1.5A per channel <br> <strong>Package:</strong> 12-DIP <br> <strong>Price:</strong> Verify current availability <br> <a href="https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200">DigiKey Product</a> <br> <a href="https://rocelec.widen.net/view/pdf/1pizbjqffm/FAIRS23777-1.pdf?t.download=true&amp;u=5oefqw">Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/45896ea9-9cc2-474c-bbe5-754e1306a7a2" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/45896ea9-9cc2-474c-bbe5-754e1306a7a2"></a></td>
+<td>- Already used in our previous KiCad schematic. <br> - Through-hole package is easy to solder. <br> - Integrated motor driver reduces external circuitry. <br> - Supports low-voltage control applications.</td>
+<td>- Maximum recommended motor supply is only 9V. <br> - Cannot safely operate our selected 12V motor at its rated voltage. <br> - Limited output current compared with newer drivers. <br> - Obsolete component is less suitable for a new design.</td>
 </tr>
 <tr>
-<td><strong>Option 2: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 2" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 2: Texas Instruments DRV8876PWPR</strong> <br> <strong>Manufacturer:</strong> Texas Instruments <br> <strong>Part Number:</strong> DRV8876PWPR <br> <strong>Motor Supply:</strong> 4.5V–37V <br> <strong>Peak Output Current:</strong> 3.5A <br> <strong>Package:</strong> 16-HTSSOP <br> <strong>Price:</strong> Verify current DigiKey unit price <br> <a href="https://www.digikey.com/en/products/result?keywords=DRV8876PWPR">DigiKey Product</a> <br> <a href="https://www.ti.com/lit/ds/symlink/drv8876.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1792210278640&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8876">Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/76256b1a-f6ff-438d-bd7c-86005146f44b" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/76256b1a-f6ff-438d-bd7c-86005146f44b"></a></td>
+<td>- Supports 12V motor operation. <br> - Compatible with 3.3V and 5V logic inputs. <br> - Integrated current sensing and regulation. <br> - Includes overcurrent and thermal protection. <br> - Supports PWM speed control and bidirectional motor operation.</td>
+<td>- Lower peak current than the DRV8874. <br> - May be unsuitable if the selected motor has a high stall current. <br> - Surface-mount package is harder to solder manually. <br> - Requires PCB layout and thermal design considerations.</td>
 </tr>
 <tr>
-<td><strong>Option 3: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 3" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 3: Texas Instruments DRV8874PWPR</strong> <br> <strong>Manufacturer:</strong> Texas Instruments <br> <strong>Part Number:</strong> DRV8874PWPR <br> <strong>Motor Supply:</strong> 4.5V–37V <br> <strong>Peak Output Current:</strong> 6A <br> <strong>Package:</strong> 16-HTSSOP <br> <strong>Price:</strong> Verify current DigiKey unit price <br> <a href="https://www.digikey.com/en/products/result?keywords=DRV8874PWPR">DigiKey Product</a> <br> <a href="https://www.ti.com/lit/ds/symlink/drv8874.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1792210378050&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fdrv8874">Manufacturer Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/da58d501-2be9-4a43-bfd7-b6bcd0901c54" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/da58d501-2be9-4a43-bfd7-b6bcd0901c54"></a></td>
+<td>- Supports our selected 12V motor supply. <br> - Higher 6A peak current capability than the DRV8876. <br> - Compatible with 3.3V and 5V microcontroller logic. <br> - Integrated current sensing and current regulation. <br> - Includes overcurrent, undervoltage, and thermal protection. <br> - Supports PWM speed control and motor direction control. <br> - Integrated H-bridge reduces the need for external switching MOSFETs.</td>
+<td>- Surface-mount package requires careful soldering. <br> - Thermal pad requires appropriate PCB copper and vias. <br> - More complicated PCB layout than a through-hole driver. <br> - 6A is a peak rating, not a guaranteed continuous current capability. <br> - Motor stall current must still be verified.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Final Selection:</strong> [Selected Part Number]</p>
-<p><strong>Rationale:</strong> [Explain the selection based on motor voltage, motor stall current, control logic compatibility, efficiency, and available protection features.]</p>
+<h3 id="final-selection_4">Final Selection</h3>
+<p><strong>Selected Component: Option 3 – Texas Instruments DRV8874PWPR</strong></p>
+<p><strong>Manufacturer:</strong> Texas Instruments</p>
+<p><strong>Manufacturer Part Number:</strong> DRV8874PWPR</p>
+<p><strong>Motor Driver Type:</strong> Integrated Brushed DC H-Bridge</p>
+<p><strong>Operating Supply Voltage:</strong> 4.5V–37V</p>
+<p><strong>Planned Motor Supply:</strong> 12V DC</p>
+<p><strong>Peak Output Current:</strong> 6A</p>
+<p><strong>Control Logic:</strong> Supports 3.3V and 5V inputs</p>
+<p><strong>Control Methods:</strong> PWM, Phase/Enable, Independent Half-Bridge</p>
+<p><strong>Package:</strong> 16-HTSSOP</p>
+<p><strong>Supplier:</strong> DigiKey</p>
+<h3 id="rationale_2">Rationale</h3>
+<p>The Texas Instruments DRV8874PWPR is selected as the preferred H-bridge motor driver for our Automatic Pet Food Dispenser because it supports 12V motor operation, offers a relatively high peak output current, and includes integrated protection features.</p>
+<p>The DRV8874 operates from a motor supply between 4.5V and 37V, making it compatible with the proposed 12V power system.</p>
+<p>Its 6A peak output current capability provides greater potential current-handling capacity than the DRV8876, although the selected motor's actual stall current must still be verified.</p>
+<p>The DRV8874 also supports 3.3V and 5V logic inputs, allowing it to interface with the PIC18F57Q43 Curiosity Nano without requiring 12V control signals.</p>
+<p>The integrated H-bridge allows the microcontroller to control motor direction and speed through digital control signals and PWM.</p>
+<p>Another important advantage is the integrated current sensing and current regulation. These features can help detect excessive motor loading and reduce the risk of damage during startup or mechanical jams.</p>
+<p>Compared with the FAN8100N used in our previous KiCad schematic, the DRV8874 supports the higher motor supply voltage required by our new 12V motor.</p>
+<p>Compared with the DRV8876, the DRV8874 provides a higher peak output current rating and lower combined high-side and low-side MOSFET on-resistance.</p>
+<p>Therefore, the <strong>DRV8874PWPR is our preferred H-bridge motor driver</strong>, pending verification of the motor's stall current, driver thermal performance, and final PCB layout.</p>
 <hr>
 <h2 id="6-linear-voltage-regulator">6. Linear Voltage Regulator</h2>
 <p><strong>Subsystem: Power Regulation</strong></p>
