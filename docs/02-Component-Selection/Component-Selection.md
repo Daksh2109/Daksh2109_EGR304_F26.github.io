@@ -419,4 +419,3 @@ Compared with the GE60I12-P1J, the TT Electronics adapter uses a direct US wall-
 
 ---
 
-eks.
