@@ -356,80 +356,67 @@ Therefore, the **Texas Instruments LM7805CT/NOPB is our preferred linear voltage
 
 ---
 
+
 ## 7. External Power Supply
 
-**Subsystem: Power Distribution**
+**Subsystem: Main DC Power Supply**
 
-The power supply must provide sufficient voltage and current for the electrical components and dispensing motor.
+The external power supply will convert AC electricity from a standard wall outlet into regulated 12V DC power for our Automatic Pet Food Dispenser.
+
+The selected power supply must plug directly into a standard US wall outlet without requiring a separate AC power cord. It must also provide sufficient current to operate the 12V DC motor, H-bridge motor driver, and low-voltage electronics.
+
+Our selected DFRobot FIT0492-B motor operates at 12V. The DRV8874 H-bridge motor driver will control the motor, while the LM7805 linear voltage regulator will convert 12V into 5V for compatible electronic components.
+
+### Component Comparison
 
 | Solution | Pros | Cons |
 |---|---|---|
-| **Option 1: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 1](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 2: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 2](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
-| **Option 3: [Part Number]** <br> Price: $[Price] <br> [Product Link](URL) <br> ![Option 3](IMAGE_URL) | - [Advantage 1] <br> - [Advantage 2] | - [Disadvantage 1] <br> - [Disadvantage 2] |
+| **Option 1: MEAN WELL SGA60U12-P1J** <br> **Manufacturer:** MEAN WELL <br> **Part Number:** SGA60U12-P1J <br> **Output Voltage:** 12V DC <br> **Output Current:** 5A <br> **Output Power:** 60W <br> **Type:** Wall-Mount AC/DC Adapter <br> **Plug:** US Wall Plug <br> **Price:** $27.79 each <br> [DigiKey Product](https://www.digikey.com/en/products/result?keywords=SGA60U12-P1J) <br> [Manufacturer Information](https://www.meanwellusa.com/upload/pdf/SGA60U/SGA60U-spec.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/ce5f9e25-85b6-4b2a-863e-b2f0691cf6d4" /> | - Provides regulated 12V DC power. <br> - Supplies up to 5A and 60W. <br> - Plugs directly into a standard US wall outlet. <br> - No separate AC power cord required. <br> - Suitable for powering a 12V motor system. | - More expensive than some alternative adapters. <br> - Larger wall-mounted adapter may block nearby outlets. <br> - Connector compatibility must be verified. <br> - Motor stall current must still be checked. |
+| **Option 2: TT Electronics PSAW65I-12-B1** <br> **Manufacturer:** TT Electronics / Power Partners <br> **Part Number:** PSAW65I-12-B1 <br> **Output Voltage:** 12V DC <br> **Output Current:** 5A <br> **Output Power:** 60W <br> **Type:** Wall-Mount AC/DC Adapter <br> **Plug:** US Wall Plug <br> **Price:**  $21.59 (verify before purchase) <br> [DigiKey Product Search](https://www.digikey.com/en/products/result?keywords=PSAW65I-12-B1) <br> [Datasheet](https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/PSAW65i.pdf) <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/19e5f357-3304-4d21-b6ed-b83167a764a1" /> | - Provides the required 12V DC output. <br> - Supplies up to 5A of current. <br> - Plugs directly into a standard US wall outlet. <br> - Does not require a separate AC power cord. <br> - Provides up to 60W of output power. <br> - Convenient for a compact pet food dispenser. <br> - Reasonable estimated price. | - Larger than lower-power wall adapters. <br> - May block an adjacent wall outlet. <br> - Barrel connector dimensions and polarity must be verified. <br> - Motor startup and stall current must be checked against the supply rating. |
+| **Option 3: Adafruit Industries 4880** <br> **Manufacturer:** Adafruit Industries <br> **Part Number:** 4880 <br> **Output Voltage:** Adjustable, 3V–12V DC <br> **Maximum Output Current:** 5A <br> **Maximum Output Power at 12V:** 60W <br> **Type:** External AC/DC Desktop Adapter <br> **AC Connection:** US Wall Plug with Cord <br> **DC Connector:** 5.5mm OD × 2.1mm ID Barrel Plug <br> **Polarity:** Center Positive <br> **Price:** $17.50 <br> [DigiKey Product](https://www.digikey.com/en/products/result?keywords=4880%20Adafruit)  <br> <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/4da8b99c-8676-4ffb-a0f6-642bda7ea254" /> | - Available from DigiKey. <br> - Supports 12V operation. <br> - Provides up to 5A of current. <br> - Uses a common center-positive barrel connector. <br> - Adjustable output voltage provides flexibility. <br> - Lower listed price than our selected adapter. | - Does not plug directly into the outlet as a single wall-mounted unit. <br> - Adjustable voltage must be set correctly to avoid damaging components. <br> - Motor stall current must still be verified. <br> - Less convenient than our selected fixed-voltage wall adapter. |
 
-**Final Selection:** [Selected Part Number]
 
-**Rationale:** [Explain why the selected power supply meets voltage and current requirements with sufficient safety margin.]
+### Final Selection
+
+**Selected Component: Option 2 – TT Electronics PSAW65I-12-B1**
+
+**Manufacturer:** TT Electronics / Power Partners
+
+**Manufacturer Part Number:** PSAW65I-12-B1
+
+**Power Supply Type:** Wall-Mount AC/DC Adapter
+
+**Output Voltage:** 12V DC
+
+**Maximum Output Current:** 5A
+
+**Maximum Output Power:** 60W
+
+**AC Connection:** Direct US Wall Plug
+
+**Unit Price:**  $21.59 
+
+**Supplier:** DigiKey
+
+
+### Rationale
+
+The TT Electronics PSAW65I-12-B1 is selected as the preferred external power supply for our Automatic Pet Food Dispenser because it provides the required 12V DC output while plugging directly into a standard US wall outlet.
+
+Unlike desktop power adapters that require a separate AC power cord, this wall-mounted adapter provides a simpler and more convenient power connection.
+
+The adapter has a rated output of 12V at 5A, allowing it to provide up to 60W of electrical power.
+
+Our selected DFRobot FIT0492-B motor operates at 12V, so this supply is compatible with the planned motor voltage.
+
+The 12V output will be connected to the PCB through a barrel jack. The power will then be distributed to the DRV8874 H-bridge motor driver and the LM7805 linear voltage regulator.
+
+The DRV8874 will control motor direction and speed, while the LM7805 will provide a regulated 5V output for compatible sensors and signal-conditioning components.
+
+Compared with the MEAN WELL SGA60U12-P1J, the TT Electronics adapter offers a similar 12V, 5A output rating at a potentially lower price.
+
+Compared with the GE60I12-P1J, the TT Electronics adapter uses a direct US wall-plug configuration without requiring an interchangeable AC plug attachment.
 
 ---
 
-## Conclusion
-
-The final component selections will be based on electrical compatibility, performance, cost, availability, ease of PCB integration, and the mechanical requirements of the Automatic Pet Food Dispenser.
-
-All selected commercial components will have manufacturer datasheets and verified product links to support future schematic design, PCB layout, and power budget calculations.
-
-
-### Style 1
-
-> This is the example found in the assignment, uses more html
-
-*Table 1: Example component selection*
-
-**External Clock Module**
-
-| **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image1.png)<br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br>[link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)                 | \* Inexpensive[^1]<br>\* Compatible with PSoC<br>\* Meets surface mount constraint of project                                               | \* Requires external components and support circuitry for interface<br>\* Needs special PCB layout. |
-| ![](image3.png)<br>\* Option 2. <br>\* CTX936TR-ND surface mount oscillator <br>\* $1/each <br>\* [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940) | \* Outputs a square wave <br>\* Stable over operating temperature <br> \* Direct interface with PSoC (no external circuitry required) range | * More expensive <br>\* Slow shipping speed                                                         |
-
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
-
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
-
-### Style 2
-
-> Also acceptable, more markdown friendly
-
-**External Clock Module**
-
-1. XC1259TR-ND surface mount crystal
-
-    ![](image1.png)
-
-    * $1/each
-    * [link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)
-
-    | Pros                                      | Cons                                                             |
-    | ----------------------------------------- | ---------------------------------------------------------------- |
-    | Inexpensive                               | Requires external components and support circuitry for interface |
-    | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |
-
-1. CTX936TR-ND surface mount oscillator
-
-    ![](image3.png)
-
-    * $1/each
-    * [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940)
-
-    | Pros                                                              | Cons                |
-    | ----------------------------------------------------------------- | ------------------- |
-    | Outputs a square wave                                             | More expensive      |
-    | Stable over operating temperature                                 | Slow shipping speed |
-    | Direct interface with PSoC (no external circuitry required) range |
-
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
-
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
+eks.
