@@ -801,31 +801,31 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Conclusion">
+    <nav class="md-nav" aria-label="7. External Power Supply">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#style-1" class="md-nav__link">
+  <a href="#component-comparison_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Style 1
+      Component Comparison
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#style-2" class="md-nav__link">
+  <a href="#final-selection_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Style 2
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
     </span>
   </a>
   
@@ -1322,31 +1322,31 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Conclusion">
+    <nav class="md-nav" aria-label="7. External Power Supply">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#style-1" class="md-nav__link">
+  <a href="#component-comparison_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Style 1
+      Component Comparison
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#style-2" class="md-nav__link">
+  <a href="#final-selection_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Style 2
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
     </span>
   </a>
   
@@ -1691,8 +1691,11 @@
 <p>Therefore, the <strong>Texas Instruments LM7805CT/NOPB is our preferred linear voltage regulator</strong>, allowing us to reuse much of our existing power regulation circuit.</p>
 <hr>
 <h2 id="7-external-power-supply">7. External Power Supply</h2>
-<p><strong>Subsystem: Power Distribution</strong></p>
-<p>The power supply must provide sufficient voltage and current for the electrical components and dispensing motor.</p>
+<p><strong>Subsystem: Main DC Power Supply</strong></p>
+<p>The external power supply will convert AC electricity from a standard wall outlet into regulated 12V DC power for our Automatic Pet Food Dispenser.</p>
+<p>The selected power supply must plug directly into a standard US wall outlet without requiring a separate AC power cord. It must also provide sufficient current to operate the 12V DC motor, H-bridge motor driver, and low-voltage electronics.</p>
+<p>Our selected DFRobot FIT0492-B motor operates at 12V. The DRV8874 H-bridge motor driver will control the motor, while the LM7805 linear voltage regulator will convert 12V into 5V for compatible electronic components.</p>
+<h3 id="component-comparison_6">Component Comparison</h3>
 <table>
 <thead>
 <tr>
@@ -1703,126 +1706,44 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 1" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 1: MEAN WELL SGA60U12-P1J</strong> <br> <strong>Manufacturer:</strong> MEAN WELL <br> <strong>Part Number:</strong> SGA60U12-P1J <br> <strong>Output Voltage:</strong> 12V DC <br> <strong>Output Current:</strong> 5A <br> <strong>Output Power:</strong> 60W <br> <strong>Type:</strong> Wall-Mount AC/DC Adapter <br> <strong>Plug:</strong> US Wall Plug <br> <strong>Price:</strong> $27.79 each <br> <a href="https://www.digikey.com/en/products/result?keywords=SGA60U12-P1J">DigiKey Product</a> <br> <a href="https://www.meanwellusa.com/upload/pdf/SGA60U/SGA60U-spec.pdf">Manufacturer Information</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/ce5f9e25-85b6-4b2a-863e-b2f0691cf6d4" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/ce5f9e25-85b6-4b2a-863e-b2f0691cf6d4"></a></td>
+<td>- Provides regulated 12V DC power. <br> - Supplies up to 5A and 60W. <br> - Plugs directly into a standard US wall outlet. <br> - No separate AC power cord required. <br> - Suitable for powering a 12V motor system.</td>
+<td>- More expensive than some alternative adapters. <br> - Larger wall-mounted adapter may block nearby outlets. <br> - Connector compatibility must be verified. <br> - Motor stall current must still be checked.</td>
 </tr>
 <tr>
-<td><strong>Option 2: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 2" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 2: TT Electronics PSAW65I-12-B1</strong> <br> <strong>Manufacturer:</strong> TT Electronics / Power Partners <br> <strong>Part Number:</strong> PSAW65I-12-B1 <br> <strong>Output Voltage:</strong> 12V DC <br> <strong>Output Current:</strong> 5A <br> <strong>Output Power:</strong> 60W <br> <strong>Type:</strong> Wall-Mount AC/DC Adapter <br> <strong>Plug:</strong> US Wall Plug <br> <strong>Price:</strong>  $21.59 (verify before purchase) <br> <a href="https://www.digikey.com/en/products/result?keywords=PSAW65I-12-B1">DigiKey Product Search</a> <br> <a href="https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/PSAW65i.pdf">Datasheet</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/19e5f357-3304-4d21-b6ed-b83167a764a1" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/19e5f357-3304-4d21-b6ed-b83167a764a1"></a></td>
+<td>- Provides the required 12V DC output. <br> - Supplies up to 5A of current. <br> - Plugs directly into a standard US wall outlet. <br> - Does not require a separate AC power cord. <br> - Provides up to 60W of output power. <br> - Convenient for a compact pet food dispenser. <br> - Reasonable estimated price.</td>
+<td>- Larger than lower-power wall adapters. <br> - May block an adjacent wall outlet. <br> - Barrel connector dimensions and polarity must be verified. <br> - Motor startup and stall current must be checked against the supply rating.</td>
 </tr>
 <tr>
-<td><strong>Option 3: [Part Number]</strong> <br> Price: $[Price] <br> <a href="URL">Product Link</a> <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="IMAGE_URL" data-desc-position="bottom"><img alt="Option 3" src="IMAGE_URL"></a></td>
-<td>- [Advantage 1] <br> - [Advantage 2]</td>
-<td>- [Disadvantage 1] <br> - [Disadvantage 2]</td>
+<td><strong>Option 3: Adafruit Industries 4880</strong> <br> <strong>Manufacturer:</strong> Adafruit Industries <br> <strong>Part Number:</strong> 4880 <br> <strong>Output Voltage:</strong> Adjustable, 3V–12V DC <br> <strong>Maximum Output Current:</strong> 5A <br> <strong>Maximum Output Power at 12V:</strong> 60W <br> <strong>Type:</strong> External AC/DC Desktop Adapter <br> <strong>AC Connection:</strong> US Wall Plug with Cord <br> <strong>DC Connector:</strong> 5.5mm OD × 2.1mm ID Barrel Plug <br> <strong>Polarity:</strong> Center Positive <br> <strong>Price:</strong> $17.50 <br> <a href="https://www.digikey.com/en/products/result?keywords=4880%20Adafruit">DigiKey Product</a>  <br> <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://github.com/user-attachments/assets/4da8b99c-8676-4ffb-a0f6-642bda7ea254" data-desc-position="bottom"><img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/4da8b99c-8676-4ffb-a0f6-642bda7ea254"></a></td>
+<td>- Available from DigiKey. <br> - Supports 12V operation. <br> - Provides up to 5A of current. <br> - Uses a common center-positive barrel connector. <br> - Adjustable output voltage provides flexibility. <br> - Lower listed price than our selected adapter.</td>
+<td>- Does not plug directly into the outlet as a single wall-mounted unit. <br> - Adjustable voltage must be set correctly to avoid damaging components. <br> - Motor stall current must still be verified. <br> - Less convenient than our selected fixed-voltage wall adapter.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Final Selection:</strong> [Selected Part Number]</p>
-<p><strong>Rationale:</strong> [Explain why the selected power supply meets voltage and current requirements with sufficient safety margin.]</p>
+<h3 id="final-selection_6">Final Selection</h3>
+<p><strong>Selected Component: Option 2 – TT Electronics PSAW65I-12-B1</strong></p>
+<p><strong>Manufacturer:</strong> TT Electronics / Power Partners</p>
+<p><strong>Manufacturer Part Number:</strong> PSAW65I-12-B1</p>
+<p><strong>Power Supply Type:</strong> Wall-Mount AC/DC Adapter</p>
+<p><strong>Output Voltage:</strong> 12V DC</p>
+<p><strong>Maximum Output Current:</strong> 5A</p>
+<p><strong>Maximum Output Power:</strong> 60W</p>
+<p><strong>AC Connection:</strong> Direct US Wall Plug</p>
+<p><strong>Unit Price:</strong>  $21.59 </p>
+<p><strong>Supplier:</strong> DigiKey</p>
+<h3 id="rationale_4">Rationale</h3>
+<p>The TT Electronics PSAW65I-12-B1 is selected as the preferred external power supply for our Automatic Pet Food Dispenser because it provides the required 12V DC output while plugging directly into a standard US wall outlet.</p>
+<p>Unlike desktop power adapters that require a separate AC power cord, this wall-mounted adapter provides a simpler and more convenient power connection.</p>
+<p>The adapter has a rated output of 12V at 5A, allowing it to provide up to 60W of electrical power.</p>
+<p>Our selected DFRobot FIT0492-B motor operates at 12V, so this supply is compatible with the planned motor voltage.</p>
+<p>The 12V output will be connected to the PCB through a barrel jack. The power will then be distributed to the DRV8874 H-bridge motor driver and the LM7805 linear voltage regulator.</p>
+<p>The DRV8874 will control motor direction and speed, while the LM7805 will provide a regulated 5V output for compatible sensors and signal-conditioning components.</p>
+<p>Compared with the MEAN WELL SGA60U12-P1J, the TT Electronics adapter offers a similar 12V, 5A output rating at a potentially lower price.</p>
+<p>Compared with the GE60I12-P1J, the TT Electronics adapter uses a direct US wall-plug configuration without requiring an interchangeable AC plug attachment.</p>
 <hr>
-<h2 id="conclusion">Conclusion</h2>
-<p>The final component selections will be based on electrical compatibility, performance, cost, availability, ease of PCB integration, and the mechanical requirements of the Automatic Pet Food Dispenser.</p>
-<p>All selected commercial components will have manufacturer datasheets and verified product links to support future schematic design, PCB layout, and power budget calculations.</p>
-<h3 id="style-1">Style 1</h3>
-<blockquote>
-<p>This is the example found in the assignment, uses more html</p>
-</blockquote>
-<p><em>Table 1: Example component selection</em></p>
-<p><strong>External Clock Module</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>Solution</strong></th>
-<th><strong>Pros</strong></th>
-<th><strong>Cons</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image1.png" data-desc-position="bottom"><img alt="" src="../image1.png"></a><br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br><a href="http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366">link to product</a></td>
-<td>* Inexpensive[^1]<br>* Compatible with PSoC<br>* Meets surface mount constraint of project</td>
-<td>* Requires external components and support circuitry for interface<br>* Needs special PCB layout.</td>
-</tr>
-<tr>
-<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="" src="../image3.png"></a><br>* Option 2. <br>* CTX936TR-ND surface mount oscillator <br>* $1/each <br>* <a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></td>
-<td>* Outputs a square wave <br>* Stable over operating temperature <br> * Direct interface with PSoC (no external circuitry required) range</td>
-<td>* More expensive <br>* Slow shipping speed</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Choice:</strong> Option 2: CTX936TR-ND surface mount oscillator</p>
-<p><strong>Rationale:</strong> A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.</p>
-<h3 id="style-2">Style 2</h3>
-<blockquote>
-<p>Also acceptable, more markdown friendly</p>
-</blockquote>
-<p><strong>External Clock Module</strong></p>
-<ol>
-<li>
-<p>XC1259TR-ND surface mount crystal</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image1.png" data-desc-position="bottom"><img alt="" src="../image1.png"></a></p>
-<ul>
-<li>$1/each</li>
-<li><a href="http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366">link to product</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Inexpensive</td>
-<td>Requires external components and support circuitry for interface</td>
-</tr>
-<tr>
-<td>Compatible with PSoC</td>
-<td>Needs special PCB layout.</td>
-</tr>
-<tr>
-<td>Meets surface mount constraint of project</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>CTX936TR-ND surface mount oscillator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="" src="../image3.png"></a></p>
-<ul>
-<li>$1/each</li>
-<li><a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Pros</th>
-<th>Cons</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Outputs a square wave</td>
-<td>More expensive</td>
-</tr>
-<tr>
-<td>Stable over operating temperature</td>
-<td>Slow shipping speed</td>
-</tr>
-<tr>
-<td>Direct interface with PSoC (no external circuitry required) range</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<p><strong>Choice:</strong> Option 2: CTX936TR-ND surface mount oscillator</p>
-<p><strong>Rationale:</strong> A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.</p>
+<p>eks.</p>
 
 
 
