@@ -7,10 +7,10 @@ title: Schematic
 This schematic is design to support .... (highlight functionally, power, and controller).
 
 
-![schematic](Screenshot.png){style width:"350" height:"300;"}
-**Figure ##:** Showing a example schematic.
+<img width="1150" height="803" alt="Screenshot 2026-10-19 223138" src="https://github.com/user-attachments/assets/956ddeb7-fd2e-4373-995f-8107a9a75364" />
+**Figure 01:** Showing my individual schematic.
 
 
 ## Resouces
 
-The schematic as a PDF download is available [*here*](ExampleSchematic.pdf), and the Zip folder of the project [*here*](dummyZip.zip).
+The schematic as a PDF download is available [*here*](), and the Zip folder of the project [*here*](dummyZip.zip).
