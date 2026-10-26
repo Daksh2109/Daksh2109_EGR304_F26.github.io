@@ -10,7 +10,7 @@ title: Component Selection
 
 The purpose of this component selection assignment is to research and compare different electrical and electromechanical components for my subsystem of Team 101's Automatic Pet Food Dispenser.
 
-My subsystem includes an optical slot sensor, op-amp filter circuit, MOSFET, motor, H-bridge motor driver, and power regulation circuitry. Each major component will be evaluated based on electrical specifications, compatibility, cost, ease of implementation, and suitability for the overall design.
+My subsystem includes a motor, H-bridge motor driver, and power regulation circuitry. Each major component will be evaluated based on electrical specifications, compatibility, cost, ease of implementation, and suitability for the overall design.
 
 The system uses the PIC18F57Q43 Curiosity Nano microcontroller. The control circuitry will use regulated 5V power where appropriate, while the motor will use a separate power supply based on its voltage and current requirements.
 
