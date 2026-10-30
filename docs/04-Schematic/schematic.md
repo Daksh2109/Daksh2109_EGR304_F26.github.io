@@ -14,4 +14,4 @@ This schematic is design to support .... (highlight functionally, power, and con
 
 ## Resouces
 
-The schematic as a PDF download is available [*here*](EGR%20304%20Pet%20Food%20Dispenser%20Individual%20subsystem.pdf), and the Zip folder of the project [*here*](EGR%20304%20Pet%20Food%20Dispenser%20Individual%20subsystem.zip).
+The schematic as a PDF download is available [*here*](EGR%20304%20Pet%20Food%20Dispenser%20Individual%20subsystem%20%281%29.pdf), and the Zip folder of the project [*here*](EGR%20304%20Pet%20Food%20Dispenser%20Individual%20subsystem.zip).
