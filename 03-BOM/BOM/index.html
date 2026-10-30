@@ -596,18 +596,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#cost-summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Cost Summary
     </span>
   </a>
   
@@ -811,18 +811,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#cost-summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Cost Summary
     </span>
   </a>
   
@@ -854,56 +854,275 @@
   <h1>Bill of Materials</h1>
 
 <h2 id="overview">Overview</h2>
-<p>written context</p>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials Example (as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<p>This Bill of Materials (BOM) lists the components used in the motor-control subsystem of the EGR 304 Automatic Pet Food Dispenser. The subsystem uses a PIC18F57Q43 Curiosity Nano to control a DRV8874 H-bridge motor driver and a 12V DC gearmotor. A linear regulator provides the 5V supply for the controller.</p>
+<p>The DC motor, H-bridge, linear voltage regulator, and external DC power supply are sourced from DigiKey. Resistors, capacitors, fuse, barrel jack, LED, and pushbutton are supplied from Peralta's electronics inventory. The PIC18F57Q43 Curiosity Nano is already provided. Components obtained from Peralta or already provided have a project purchase cost of $0.00.</p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
-<th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
-<th style="text-align: left;"><strong>Manufacturer #</strong></th>
-<th style="text-align: left;"><strong>Vendor Link</strong></th>
-<th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th>Part Name / Description</th>
+<th style="text-align: right;">Qty</th>
+<th style="text-align: right;">Unit Cost</th>
+<th style="text-align: right;">Total Cost</th>
+<th>Manufacturer</th>
+<th>Manufacturer #</th>
+<th>Vendor Link</th>
+<th>Datasheet Link</th>
+<th>Schematic Reference Designators</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
-<td style="text-align: left;">U1</td>
+<td>0.1 µF ceramic capacitor, 10V minimum</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>C1</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td>0.33 µF capacitor, 25V / 10V minimum respectively</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>C2, C3</td>
+</tr>
+<tr>
+<td>100 µF capacitor, 50V</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>C4</td>
+</tr>
+<tr>
+<td>0.022 µF ceramic capacitor, 50V</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>C5</td>
+</tr>
+<tr>
+<td>0.1 µF ceramic capacitor, 50V</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>C6, C7</td>
+</tr>
+<tr>
+<td>Indicator LED</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>3A time-delay fuse, DC-rated</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>F1</td>
+</tr>
+<tr>
+<td>8-pin male PCB header, 2.54 mm pitch</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Generic 1x8 pin header</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>J1</td>
+</tr>
+<tr>
+<td>DC barrel jack</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>J2</td>
+</tr>
+<tr>
+<td>12V, 100 RPM, 5W DC gearmotor</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$11.90</td>
+<td style="text-align: right;">$11.90</td>
+<td>DFRobot</td>
+<td>FIT0492-B</td>
+<td><a href="https://www.digikey.com/en/products/detail/dfrobot/FIT0492-B/7087168">DigiKey</a></td>
+<td><a href="https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/FIT0492-B_Web.pdf">Datasheet</a></td>
+<td>M1</td>
+</tr>
+<tr>
+<td>10 kΩ resistor, 0.25W</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>R1, R3, R4, R7, R8</td>
+</tr>
+<tr>
+<td>330 Ω resistor, 0.25W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>R2</td>
+</tr>
+<tr>
+<td>1 kΩ resistor, 0.25W</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>R5, R6</td>
+</tr>
+<tr>
+<td>3.3 kΩ resistor, 0.25W</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>R9</td>
+</tr>
+<tr>
+<td>Pushbutton</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Peralta inventory</td>
+<td>Stock item</td>
+<td>Peralta</td>
+<td>N/A</td>
+<td>SW1</td>
+</tr>
+<tr>
+<td>PIC18F57Q43 Curiosity Nano development board</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$0.00</td>
+<td style="text-align: right;">$0.00</td>
+<td>Microchip Technology</td>
+<td>PIC18F57Q43 Curiosity Nano</td>
+<td>Already provided</td>
+<td><a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf">Datasheet</a></td>
+<td>U1</td>
+</tr>
+<tr>
+<td>5V, 1.5A linear voltage regulator, TO-220</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$1.08</td>
+<td style="text-align: right;">$1.08</td>
+<td>STMicroelectronics</td>
+<td>L7805CV; DigiKey 497-1443-5-ND</td>
+<td><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964">DigiKey</a></td>
+<td><a href="https://www.st.com/resource/en/datasheet/l78.pdf">Datasheet</a></td>
+<td>U2</td>
+</tr>
+<tr>
+<td>H-bridge motor driver, 16-HTSSOP</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$3.85</td>
+<td style="text-align: right;">$3.85</td>
+<td>Texas Instruments</td>
+<td>DRV8874PWPR ; DigiKey 296-DRV8874PWPRCT-ND</td>
+<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/DRV8874PWPR/11502339">DigiKey</a></td>
+<td><a href="https://www.ti.com/lit/ds/symlink/drv8874.pdf">Datasheet</a></td>
+<td>U3</td>
+</tr>
+<tr>
+<td>12V, 5A, 60W AC/DC external power supply</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$20.36</td>
+<td style="text-align: right;">$20.36</td>
+<td>TT Electronics / Power Partners</td>
+<td>PSAW65I-12-B1; DigiKey 3989-PSAW65I-12-B1-ND</td>
+<td><a href="https://www.digikey.com/en/products/detail/tt-electronics-power-partners-inc/PSAW65I-12-B1/15838872">DigiKey</a></td>
+<td><a href="https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/PSAW65I.pdf">Datasheet</a></td>
+<td>External power supply</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
-<ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
-</ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials Example (as Image)</h2>
-<p><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:" />
-<strong>Figure 2:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
+<h2 id="cost-summary">Cost Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th style="text-align: right;">Estimated Purchase Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DigiKey - DC gearmotor</td>
+<td style="text-align: right;">$11.90</td>
+</tr>
+<tr>
+<td>DigiKey - DRV8874 motor driver (provisional)</td>
+<td style="text-align: right;">$3.85</td>
+</tr>
+<tr>
+<td>DigiKey - L7805CV regulator</td>
+<td style="text-align: right;">$1.08</td>
+</tr>
+<tr>
+<td>DigiKey - 12V power supply</td>
+<td style="text-align: right;">$20.36</td>
+</tr>
+<tr>
+<td>Peralta-provided components</td>
+<td style="text-align: right;">$0.00</td>
+</tr>
+<tr>
+<td>Previously provided PIC board</td>
+<td style="text-align: right;">$0.00</td>
+</tr>
+<tr>
+<td><strong>Purchasing-components subtotal</strong></td>
+<td style="text-align: right;"><strong>$37.19</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Prices are single-unit DigiKey listing prices checked October 2026 and may change. Shipping, taxes, and other costs are excluded.</p>
 
 
 
