@@ -11,17 +11,24 @@ as part of<br>
 for<br>
 <font size= "5"> Team 101 </font><br>
 
-**Submission: month, DD, YYYY**
+**Submission: October, 30, 2026**
 </center>
 
 ## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
+This individual datasheet documents the design and development of the motor-control subsystem for an Automatic Pet Food Dispenser created as part of EGR 304. The purpose of this project is to develop a system capable of dispensing pet food automatically using electronic controls and a motor-driven mechanism.
+
+My individual responsibility focuses on controlling the DC motor responsible for dispensing food, providing the required power to the control circuitry, and establishing an electrical interface with the other subsystem. This datasheet includes the component selection, Bill of Materials (BOM), circuit schematic, and power budget used to support the design.
 
 ### Project Summary
 
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+* The Automatic Pet Food Dispenser is designed to provide a convenient and reliable way to dispense food for pets without requiring manual operation every time.     The system combines electronic controls, a motor-driven dispensing mechanism, and coordinated communication between subsystems to release food when requested.
+
+* The overall design uses a microcontroller-based control system to coordinate the dispensing process. When a dispensing request is generated, the motor-control     subsystem receives a digital signal and activates the DC motor to operate the food-dispensing mechanism.
+
+* The project aims to create a functional, affordable, and reliable prototype while maintaining a design that can be tested, assembled, and improved throughout      the engineering development process.
+
+* My subsystem contributes to the overall project by providing the electrical motor-control and power-regulation functions needed to operate the dispensing          mechanism. [team report.](https://egr304-2026-f-101.github.io/)
 
 
 ### My Contribution
