@@ -33,8 +33,8 @@ The DC motor, H-bridge, linear voltage regulator, and external DC power supply a
 | 3.3 kΩ resistor, 0.25W | 1 | $0.00 | $0.00 | Peralta inventory | Stock item | Peralta | N/A | R9 |
 | Pushbutton | 1 | $0.00 | $0.00 | Peralta inventory | Stock item | Peralta | N/A | SW1 |
 | PIC18F57Q43 Curiosity Nano development board | 1 | $0.00 | $0.00 | Microchip Technology | PIC18F57Q43 Curiosity Nano | Already provided | [Datasheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf) | U1 |
-| 5V, 1.5A linear voltage regulator, TO-220 | 1 | $1.08 | $1.08 | STMicroelectronics | L7805CV; DigiKey 497-1443-5-ND | [DigiKey](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964) | [Datasheet](https://www.st.com/resource/en/datasheet/l78.pdf) | U2 |
-| H-bridge motor driver, 16-HTSSOP | 1 | $3.85 | $3.85 | Texas Instruments | DRV8874PWPR ; DigiKey 296-DRV8874PWPRCT-ND | [DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/DRV8874PWPR/11502339) | [Datasheet](https://www.ti.com/lit/ds/symlink/drv8874.pdf) | U3 |
+| 5V, 1.5A linear voltage regulator, TO-220 | 3 | $1.08 | $3.24 | STMicroelectronics | L7805CV; DigiKey 497-1443-5-ND | [DigiKey](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964) | [Datasheet](https://www.st.com/resource/en/datasheet/l78.pdf) | U2 |
+| H-bridge motor driver, 16-HTSSOP | 3 | $3.85 | $11.55 | Texas Instruments | DRV8874PWPR ; DigiKey 296-DRV8874PWPRCT-ND | [DigiKey](https://www.digikey.com/en/products/detail/texas-instruments/DRV8874PWPR/11502339) | [Datasheet](https://www.ti.com/lit/ds/symlink/drv8874.pdf) | U3 |
 | 12V, 5A, 60W AC/DC external power supply | 1 | $20.36 | $20.36 | TT Electronics / Power Partners | PSAW65I-12-B1; DigiKey 3989-PSAW65I-12-B1-ND | [DigiKey](https://www.digikey.com/en/products/detail/tt-electronics-power-partners-inc/PSAW65I-12-B1/15838872) | [Datasheet](https://www.ttelectronics.com/TTElectronics/media/ProductFiles/Datasheet/PSAW65I.pdf) | External power supply |
 
 ## Cost Summary
@@ -42,12 +42,12 @@ The DC motor, H-bridge, linear voltage regulator, and external DC power supply a
 | Source | Estimated Purchase Cost |
 |---|---:|
 | DigiKey - DC gearmotor | $11.90 |
-| DigiKey - DRV8874 motor driver (provisional) | $3.85 |
-| DigiKey - L7805CV regulator | $1.08 |
+| DigiKey - DRV8874 motor driver | $11.55 |
+| DigiKey - L7805CV regulator | $3.24 |
 | DigiKey - 12V power supply | $20.36 |
 | Peralta-provided components | $0.00 |
 | Previously provided PIC board | $0.00 |
-| **Purchasing-components subtotal** | **$37.19** |
+| **Purchasing-components subtotal** | **$47.05** |
 
 **Note:** Prices are single-unit DigiKey listing prices checked October 2026 and may change. Shipping, taxes, and other costs are excluded.
 
