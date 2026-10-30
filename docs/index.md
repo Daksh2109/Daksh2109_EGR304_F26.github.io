@@ -7,7 +7,7 @@ tags:
 <center>
 <font size= "6">Daksh Raghav Preetha Datasheet</font><br>
 as part of<br>
-<font size= "8"> Automatic Pet Feeder </font><br>
+<font size= "8"> Automatic Pet Food Dispenser </font><br>
 for<br>
 <font size= "5"> Team 101 </font><br>
 
@@ -33,9 +33,39 @@ My individual responsibility focuses on controlling the DC motor responsible for
 
 ### My Contribution
 
-* This needs to be updated to reflect a team introduction
-* Content should also help an unfamiliar reader navigate to areas of interest. Information like:
+My responsibility for the Automatic Pet Food Dispenser project is the design and development of the **Motor-Control and Power-Regulation Subsystem**.
 
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
+The subsystem uses a PIC18F57Q43 Curiosity Nano microcontroller to control a FIT0492-B 12V DC gearmotor through a DRV8874 H-bridge motor driver. The H-bridge allows the microcontroller to control motor operation electronically.
 
-For all the sections
+A 12V DC power supply provides power to the motor driver and motor, while an L7805CV linear voltage regulator converts the 12V supply to 5V for the microcontroller and supporting circuitry.
+
+The subsystem also includes a manual pushbutton for local activation, an LED for debugging, and an 8-pin header interface for connecting to the other subsystem.
+
+The interface allows the motor-control subsystem to receive a digital dispensing request and operate the motor for the required dispensing cycle.
+
+My individual design responsibilities include:
+
+- Selecting the motor, H-bridge driver, voltage regulator, and power supply.
+- Designing the motor-control and power-regulation schematic using KiCad.
+- Establishing the digital interface between the motor-control subsystem and the other subsystem.
+- Creating the Bill of Materials and identifying component suppliers.
+- Calculating the electrical power requirements and safety margins.
+- Preparing the design for prototyping, testing, and eventual PCB implementation.
+
+The following sections document the engineering decisions and calculations supporting my subsystem.
+
+### Component Selection
+
+The [Component Selection](02-Component-Selection/Component-Selection.md) section explains the selection of the motor, H-bridge motor driver, voltage regulator, and power supply based on their electrical specifications and suitability for the dispensing mechanism.
+
+### Bill of Materials (BOM)
+
+The [Bill of Materials](03-BOM/BOM.md) section lists the components required to construct the motor-control subsystem, including quantities, manufacturers, supplier information, and estimated costs.
+
+### Schematic
+
+The [Schematic](04-Schematic/schematic.md) section contains the KiCad electrical schematic for the subsystem, including the microcontroller, motor driver, power regulation, input interface, and supporting components.
+
+### Power Budget
+
+The [Power Budget](05-Power-Budget/Power-Budget.md) section calculates the electrical current and power requirements of the subsystem, evaluates the selected power supply, and includes safety margins for reliable operation.
