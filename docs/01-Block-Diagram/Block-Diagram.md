@@ -8,5 +8,5 @@ The purpose of this block diagram is to show the overall electrical layout of my
 
 ##  Block Diagram 
 
-<img width="730" height="572" alt="Screenshot 2026-10-26 104534" src="https://github.com/user-attachments/assets/1a25b16a-9437-4fa0-ac16-203e0e116397" />
+<img width="632" height="610" alt="Screenshot 2026-10-30 194906" src="https://github.com/user-attachments/assets/280e553d-79ff-4cb7-9a02-c7ecf2ddbfd8" />
 
